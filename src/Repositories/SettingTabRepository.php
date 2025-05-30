@@ -6,7 +6,6 @@ use Codedor\FilamentSettings\Drivers\DriverInterface;
 use Codedor\FilamentSettings\Rules\SettingMustBeFilledIn;
 use Codedor\FilamentSettings\Settings\SettingsInterface;
 use Filament\Forms\Components\Field;
-use Filament\Forms\Components\Tabs\Tab;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 
