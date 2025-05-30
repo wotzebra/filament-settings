@@ -7,7 +7,7 @@ use Filament\Widgets\Widget;
 
 class RequiredFieldsWidget extends Widget
 {
-    protected static string $view = 'filament-settings::widgets.required_fields_widget';
+    protected string $view = 'filament-settings::widgets.required_fields_widget';
 
     protected int|string|array $columnSpan = 'full';
 

@@ -68,7 +68,7 @@ class SettingTabRepository
                 return $field->default($value);
             })->toArray();
 
-            return Tab::make($tabName)->schema($schema);
+            return \Filament\Schemas\Components\Tabs\Tab::make($tabName)->schema($schema);
         })->values()->toArray();
     }
 

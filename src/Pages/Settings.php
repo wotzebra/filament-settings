@@ -12,7 +12,7 @@ use Filament\Pages\Page;
 
 class Settings extends Page
 {
-    protected static string $view = 'filament-settings::pages.settings';
+    protected string $view = 'filament-settings::pages.settings';
 
     public string $focus = '';
 
@@ -61,14 +61,14 @@ class Settings extends Page
         $this->dispatch('filament-settings::refresh-widget');
     }
 
-    public function form(Form $form): Form
+    public function form(\Filament\Schemas\Schema $schema): \Filament\Schemas\Schema
     {
         /** @var SettingTabRepository $rep */
         $rep = app(SettingTabRepository::class);
 
-        return $form
-            ->schema([
-                Tabs::make('Settings')
+        return $schema
+            ->components([
+                \Filament\Schemas\Components\Tabs::make('Settings')
                     ->persistTabInQueryString()
                     ->tabs($rep->toTabsSchema($this->focus)),
             ])->statePath('data');

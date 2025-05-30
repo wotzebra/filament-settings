@@ -5,7 +5,7 @@
             count: 2
             path: src/Pages/Settings.php
         -
-            message: "#^Static property Codedor\\\\FilamentSettings\\\\Widgets\\\\RequiredFieldsWidget\\:\\:\\$view \\(view-string\\) does not accept default value of type string\\.$#"
+            message: "#^Property Codedor\\\\FilamentSettings\\\\Widgets\\\\RequiredFieldsWidget\\:\\:\\$view \\(view-string\\) does not accept default value of type string\\.$#"
             count: 1
             path: src/Widgets/RequiredFieldsWidget.php
         -
