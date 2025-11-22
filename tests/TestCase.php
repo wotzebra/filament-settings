@@ -4,7 +4,6 @@ namespace Codedor\FilamentSettings\Tests;
 
 use BladeUI\Heroicons\BladeHeroiconsServiceProvider;
 use BladeUI\Icons\BladeIconsServiceProvider;
-use Codedor\FilamentRedirects\Providers\FilamentRedirectsServiceProvider;
 use Codedor\FilamentSettings\Filament\SettingsPlugin;
 use Codedor\FilamentSettings\Providers\SettingsServiceProvider;
 use Filament\Actions\ActionsServiceProvider;
@@ -18,7 +17,6 @@ use Filament\Tables\TablesServiceProvider;
 use Filament\Widgets\WidgetsServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Livewire\LivewireServiceProvider;
-use Maatwebsite\Excel\ExcelServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 use RyanChandler\BladeCaptureDirective\BladeCaptureDirectiveServiceProvider;
 
