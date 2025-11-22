@@ -5,7 +5,6 @@ use Codedor\FilamentSettings\Rules\SettingMustBeFilledIn;
 use Codedor\FilamentSettings\Tests\TestFiles\Settings\TestInvalidSettings;
 use Codedor\FilamentSettings\Tests\TestFiles\Settings\TestSettings;
 use Codedor\FilamentSettings\Tests\TestFiles\Settings\TestSettingsWithPriority;
-use Filament\Forms\Components\Tabs\Tab;
 use Filament\Forms\Components\TextInput;
 
 it('registers settings tabs', function () {
