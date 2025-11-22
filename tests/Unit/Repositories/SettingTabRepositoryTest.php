@@ -67,7 +67,7 @@ it('returns the schema for setting tabs', function () {
     expect($schema)
         ->toArray()
         ->toMatchArray([
-            Tab::make('Test Settings')
+            \Filament\Schemas\Components\Tabs\Tab::make('Test Settings')
                 ->schema([
                     TextInput::make('site.name')
                         ->default(null)
