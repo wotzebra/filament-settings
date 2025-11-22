@@ -71,6 +71,12 @@ class SettingTabRepository
         })->values()->toArray();
     }
 
+    public function removeTab(string $class): Collection
+    {
+        return $this->tabs = $this->tabs
+            ->reject(fn (string $settingsTab) => $settingsTab === $class);
+    }
+
     public function getTabs(): Collection
     {
         return $this->tabs->map(fn (string $settingsTab) => $settingsTab::schema());

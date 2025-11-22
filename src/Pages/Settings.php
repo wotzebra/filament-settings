@@ -7,6 +7,7 @@ use Codedor\FilamentSettings\Repositories\SettingTabRepository;
 use Codedor\FilamentSettings\Widgets\RequiredFieldsWidget;
 use Filament\Notifications\Notification;
 use Filament\Pages\Page;
+use Illuminate\Contracts\Support\Htmlable;
 
 class Settings extends Page
 {
@@ -51,7 +52,7 @@ class Settings extends Page
         collect($data)->each(fn ($value, $key) => $interface->set($key, $value));
 
         Notification::make()
-            ->title('Settings')
+            ->title(self::getNavigationLabel())
             ->body(__('filament-settings::admin.saved'))
             ->success()
             ->send();
@@ -77,5 +78,15 @@ class Settings extends Page
         return [
             RequiredFieldsWidget::class,
         ];
+    }
+
+    public static function getNavigationLabel(): string
+    {
+        return __('filament-settings::admin.settings title');
+    }
+
+    public function getTitle(): string|Htmlable
+    {
+        return self::getNavigationLabel();
     }
 }
