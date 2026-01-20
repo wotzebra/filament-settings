@@ -1,13 +1,13 @@
 <?php
 
-namespace Codedor\FilamentSettings\Pages;
+namespace Wotz\FilamentSettings\Pages;
 
-use Codedor\FilamentSettings\Drivers\DriverInterface;
-use Codedor\FilamentSettings\Repositories\SettingTabRepository;
-use Codedor\FilamentSettings\Widgets\RequiredFieldsWidget;
 use Filament\Notifications\Notification;
 use Filament\Pages\Page;
 use Illuminate\Contracts\Support\Htmlable;
+use Wotz\FilamentSettings\Drivers\DriverInterface;
+use Wotz\FilamentSettings\Repositories\SettingTabRepository;
+use Wotz\FilamentSettings\Widgets\RequiredFieldsWidget;
 
 class Settings extends Page
 {
@@ -38,7 +38,7 @@ class Settings extends Page
 
     public function submit()
     {
-        /** @var \Codedor\FilamentSettings\Drivers\DriverInterface $interface */
+        /** @var \Wotz\FilamentSettings\Drivers\DriverInterface $interface */
         $interface = app(DriverInterface::class);
 
         $data = [];

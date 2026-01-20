@@ -1,13 +1,13 @@
 <?php
 
-namespace Codedor\FilamentSettings\Repositories;
+namespace Wotz\FilamentSettings\Repositories;
 
-use Codedor\FilamentSettings\Drivers\DriverInterface;
-use Codedor\FilamentSettings\Rules\SettingMustBeFilledIn;
-use Codedor\FilamentSettings\Settings\SettingsInterface;
 use Filament\Forms\Components\Field;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
+use Wotz\FilamentSettings\Drivers\DriverInterface;
+use Wotz\FilamentSettings\Rules\SettingMustBeFilledIn;
+use Wotz\FilamentSettings\Settings\SettingsInterface;
 
 class SettingTabRepository
 {
@@ -50,7 +50,7 @@ class SettingTabRepository
     {
         return $this->getTabs()->map(function ($schema, $tabName) use ($focusKey) {
             $schema = collect($schema)->map(function (Field $field) use ($focusKey) {
-                /** @var \Codedor\FilamentSettings\Drivers\DriverInterface $repository */
+                /** @var \Wotz\FilamentSettings\Drivers\DriverInterface $repository */
                 $repository = app(DriverInterface::class);
                 $fieldName = $field->getName();
 
@@ -91,13 +91,26 @@ class SettingTabRepository
     {
         return $this->getTabs()
             ->flatten()
-            ->filter(fn (Field $field) => collect($field->getValidationRules())
-                ->contains(fn ($rule) => $rule instanceof SettingMustBeFilledIn))
-            ->mapWithKeys(fn (Field $field) => [
-                $field->getName() => [
-                    'label' => $field->getLabel(),
-                    'tab' => Str::of($field->getName())->before('.')->slug() . '-tab',
-                ],
-            ]);
+            ->filter(fn ($field) => $field instanceof Field)
+            ->filter(function (Field $field) {
+                try {
+                    return collect($field->getValidationRules())
+                        ->contains(fn ($rule) => $rule instanceof SettingMustBeFilledIn);
+                } catch (\Throwable) {
+                    return false;
+                }
+            })
+            ->mapWithKeys(function (Field $field) {
+                try {
+                    return [
+                        $field->getName() => [
+                            'label' => $field->getLabel(),
+                            'tab' => Str::of($field->getName())->before('.')->slug() . '-tab',
+                        ],
+                    ];
+                } catch (\Throwable) {
+                    return [];
+                }
+            });
     }
 }

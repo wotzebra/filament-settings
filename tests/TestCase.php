@@ -1,11 +1,9 @@
 <?php
 
-namespace Codedor\FilamentSettings\Tests;
+namespace Wotz\FilamentSettings\Tests;
 
 use BladeUI\Heroicons\BladeHeroiconsServiceProvider;
 use BladeUI\Icons\BladeIconsServiceProvider;
-use Codedor\FilamentSettings\Filament\SettingsPlugin;
-use Codedor\FilamentSettings\Providers\SettingsServiceProvider;
 use Filament\Actions\ActionsServiceProvider;
 use Filament\FilamentServiceProvider;
 use Filament\Forms\FormsServiceProvider;
@@ -19,6 +17,8 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Livewire\LivewireServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 use RyanChandler\BladeCaptureDirective\BladeCaptureDirectiveServiceProvider;
+use Wotz\FilamentSettings\Filament\SettingsPlugin;
+use Wotz\FilamentSettings\Providers\SettingsServiceProvider;
 
 class TestCase extends Orchestra
 {
@@ -40,7 +40,7 @@ class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'Codedor\\FilamentSettings\\Database\\Factories\\' . class_basename($modelName) . 'Factory'
+            fn (string $modelName) => 'Wotz\\FilamentSettings\\Database\\Factories\\' . class_basename($modelName) . 'Factory'
         );
     }
 

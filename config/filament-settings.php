@@ -1,6 +1,6 @@
 <?php
 
-use Codedor\FilamentSettings\Drivers\DatabaseDriver;
+use Wotz\FilamentSettings\Drivers\DatabaseDriver;
 
 return [
     'driver' => DatabaseDriver::class,
