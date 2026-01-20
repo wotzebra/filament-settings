@@ -1,6 +1,6 @@
 <?php
 
-namespace Codedor\FilamentSettings\Facades;
+namespace Wotz\FilamentSettings\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static bool has(string $key)
  * @method static void forget(string $key)
  *
- * @see \Codedor\FilamentSettings\Drivers\DatabaseDriver
+ * @see \Wotz\FilamentSettings\Drivers\DatabaseDriver
  */
 class Setting extends Facade
 {

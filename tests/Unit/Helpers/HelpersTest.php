@@ -1,6 +1,6 @@
 <?php
 
-use Codedor\FilamentSettings\Models\Setting;
+use Wotz\FilamentSettings\Models\Setting;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 uses(RefreshDatabase::class);

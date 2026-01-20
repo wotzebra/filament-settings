@@ -1,5 +1,5 @@
 <?php
 
-namespace Codedor\FilamentSettings\Tests\TestFiles\Settings;
+namespace Wotz\FilamentSettings\Tests\TestFiles\Settings;
 
 class TestInvalidSettings {}

@@ -1,12 +1,11 @@
 <?php
 
-namespace Codedor\FilamentSettings\Tests;
+namespace Wotz\FilamentSettings\Tests;
 
 use BladeUI\Heroicons\BladeHeroiconsServiceProvider;
 use BladeUI\Icons\BladeIconsServiceProvider;
-use Codedor\FilamentRedirects\Providers\FilamentRedirectsServiceProvider;
-use Codedor\FilamentSettings\Filament\SettingsPlugin;
-use Codedor\FilamentSettings\Providers\SettingsServiceProvider;
+use Wotz\FilamentSettings\Filament\SettingsPlugin;
+use Wotz\FilamentSettings\Providers\SettingsServiceProvider;
 use Filament\Actions\ActionsServiceProvider;
 use Filament\FilamentServiceProvider;
 use Filament\Forms\FormsServiceProvider;
@@ -42,7 +41,7 @@ class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'Codedor\\FilamentSettings\\Database\\Factories\\' . class_basename($modelName) . 'Factory'
+            fn (string $modelName) => 'Wotz\\FilamentSettings\\Database\\Factories\\' . class_basename($modelName) . 'Factory'
         );
     }
 

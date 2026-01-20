@@ -1,6 +1,6 @@
 <?php
 
-namespace Codedor\FilamentSettings\Settings;
+namespace Wotz\FilamentSettings\Settings;
 
 interface SettingsInterface
 {

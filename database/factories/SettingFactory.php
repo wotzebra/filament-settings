@@ -1,8 +1,8 @@
 <?php
 
-namespace Codedor\FilamentSettings\Database\Factories;
+namespace Wotz\FilamentSettings\Database\Factories;
 
-use Codedor\FilamentSettings\Models\Setting;
+use Wotz\FilamentSettings\Models\Setting;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class SettingFactory extends Factory

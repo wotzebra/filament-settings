@@ -1,6 +1,6 @@
 <?php
 
-namespace Codedor\FilamentSettings\Drivers;
+namespace Wotz\FilamentSettings\Drivers;
 
 interface DriverInterface
 {

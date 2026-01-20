@@ -1,10 +1,10 @@
 <?php
 
-namespace Codedor\FilamentSettings\Repositories;
+namespace Wotz\FilamentSettings\Repositories;
 
-use Codedor\FilamentSettings\Drivers\DriverInterface;
-use Codedor\FilamentSettings\Rules\SettingMustBeFilledIn;
-use Codedor\FilamentSettings\Settings\SettingsInterface;
+use Wotz\FilamentSettings\Drivers\DriverInterface;
+use Wotz\FilamentSettings\Rules\SettingMustBeFilledIn;
+use Wotz\FilamentSettings\Settings\SettingsInterface;
 use Filament\Forms\Components\Field;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
@@ -50,7 +50,7 @@ class SettingTabRepository
     {
         return $this->getTabs()->map(function ($schema, $tabName) use ($focusKey) {
             $schema = collect($schema)->map(function (Field $field) use ($focusKey) {
-                /** @var \Codedor\FilamentSettings\Drivers\DriverInterface $repository */
+                /** @var \Wotz\FilamentSettings\Drivers\DriverInterface $repository */
                 $repository = app(DriverInterface::class);
                 $fieldName = $field->getName();
 

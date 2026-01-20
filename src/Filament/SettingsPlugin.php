@@ -1,9 +1,9 @@
 <?php
 
-namespace Codedor\FilamentSettings\Filament;
+namespace Wotz\FilamentSettings\Filament;
 
-use Codedor\FilamentSettings\Pages\Settings;
-use Codedor\FilamentSettings\Widgets\RequiredFieldsWidget;
+use Wotz\FilamentSettings\Pages\Settings;
+use Wotz\FilamentSettings\Widgets\RequiredFieldsWidget;
 use Filament\Contracts\Plugin;
 use Filament\Panel;
 

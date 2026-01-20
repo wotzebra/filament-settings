@@ -1,8 +1,8 @@
 <?php
 
-namespace Codedor\FilamentSettings\Widgets;
+namespace Wotz\FilamentSettings\Widgets;
 
-use Codedor\FilamentSettings\Repositories\SettingTabRepository;
+use Wotz\FilamentSettings\Repositories\SettingTabRepository;
 use Filament\Widgets\Widget;
 
 class RequiredFieldsWidget extends Widget

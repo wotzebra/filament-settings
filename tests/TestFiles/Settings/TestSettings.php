@@ -1,9 +1,9 @@
 <?php
 
-namespace Codedor\FilamentSettings\Tests\TestFiles\Settings;
+namespace Wotz\FilamentSettings\Tests\TestFiles\Settings;
 
-use Codedor\FilamentSettings\Rules\SettingMustBeFilledIn;
-use Codedor\FilamentSettings\Settings\SettingsInterface;
+use Wotz\FilamentSettings\Rules\SettingMustBeFilledIn;
+use Wotz\FilamentSettings\Settings\SettingsInterface;
 use Filament\Forms\Components\TextInput;
 
 class TestSettings implements SettingsInterface

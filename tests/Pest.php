@@ -1,5 +1,5 @@
 <?php
 
-use Codedor\FilamentSettings\Tests\TestCase;
+use Wotz\FilamentSettings\Tests\TestCase;
 
 uses(TestCase::class)->in('Unit');

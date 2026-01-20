@@ -1,9 +1,9 @@
 <?php
 
-namespace Codedor\FilamentSettings\Providers;
+namespace Wotz\FilamentSettings\Providers;
 
-use Codedor\FilamentSettings\Drivers\DriverInterface;
-use Codedor\FilamentSettings\Repositories\SettingTabRepository;
+use Wotz\FilamentSettings\Drivers\DriverInterface;
+use Wotz\FilamentSettings\Repositories\SettingTabRepository;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -30,7 +30,7 @@ class SettingsServiceProvider extends PackageServiceProvider
 
     protected function registerTabs(): void
     {
-        /** @var \Codedor\FilamentSettings\Repositories\SettingTabRepository $settingsTabRepository */
+        /** @var \Wotz\FilamentSettings\Repositories\SettingTabRepository $settingsTabRepository */
         $settingsTabRepository = app(SettingTabRepository::class);
         $settingsTabRepository->registerTab(config('filament-settings.tabs', []));
     }
