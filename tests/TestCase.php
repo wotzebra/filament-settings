@@ -4,8 +4,6 @@ namespace Wotz\FilamentSettings\Tests;
 
 use BladeUI\Heroicons\BladeHeroiconsServiceProvider;
 use BladeUI\Icons\BladeIconsServiceProvider;
-use Wotz\FilamentSettings\Filament\SettingsPlugin;
-use Wotz\FilamentSettings\Providers\SettingsServiceProvider;
 use Filament\Actions\ActionsServiceProvider;
 use Filament\FilamentServiceProvider;
 use Filament\Forms\FormsServiceProvider;
@@ -17,9 +15,10 @@ use Filament\Tables\TablesServiceProvider;
 use Filament\Widgets\WidgetsServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Livewire\LivewireServiceProvider;
-use Maatwebsite\Excel\ExcelServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 use RyanChandler\BladeCaptureDirective\BladeCaptureDirectiveServiceProvider;
+use Wotz\FilamentSettings\Filament\SettingsPlugin;
+use Wotz\FilamentSettings\Providers\SettingsServiceProvider;
 
 class TestCase extends Orchestra
 {

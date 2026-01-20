@@ -1,12 +1,11 @@
 <?php
 
+use Filament\Forms\Components\TextInput;
 use Wotz\FilamentSettings\Repositories\SettingTabRepository;
 use Wotz\FilamentSettings\Rules\SettingMustBeFilledIn;
 use Wotz\FilamentSettings\Tests\TestFiles\Settings\TestInvalidSettings;
 use Wotz\FilamentSettings\Tests\TestFiles\Settings\TestSettings;
 use Wotz\FilamentSettings\Tests\TestFiles\Settings\TestSettingsWithPriority;
-use Filament\Forms\Components\Tabs\Tab;
-use Filament\Forms\Components\TextInput;
 
 it('registers settings tabs', function () {
     /** @var \Wotz\FilamentSettings\Repositories\SettingTabRepository $repo */
