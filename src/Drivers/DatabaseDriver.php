@@ -2,8 +2,8 @@
 
 namespace Wotz\FilamentSettings\Drivers;
 
-use Wotz\FilamentSettings\Models\Setting;
 use Illuminate\Support\Facades\Cache;
+use Wotz\FilamentSettings\Models\Setting;
 
 class DatabaseDriver implements DriverInterface
 {

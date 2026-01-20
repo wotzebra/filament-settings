@@ -1,11 +1,11 @@
 <?php
 
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Livewire\Livewire;
 use Wotz\FilamentSettings\Drivers\DriverInterface;
 use Wotz\FilamentSettings\Repositories\SettingTabRepository;
 use Wotz\FilamentSettings\Tests\TestFiles\Settings\TestSettings;
 use Wotz\FilamentSettings\Widgets\RequiredFieldsWidget;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Livewire\Livewire;
 
 uses(RefreshDatabase::class);
 

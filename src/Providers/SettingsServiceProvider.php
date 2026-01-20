@@ -2,10 +2,10 @@
 
 namespace Wotz\FilamentSettings\Providers;
 
-use Wotz\FilamentSettings\Drivers\DriverInterface;
-use Wotz\FilamentSettings\Repositories\SettingTabRepository;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
+use Wotz\FilamentSettings\Drivers\DriverInterface;
+use Wotz\FilamentSettings\Repositories\SettingTabRepository;
 
 class SettingsServiceProvider extends PackageServiceProvider
 {

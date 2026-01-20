@@ -2,9 +2,9 @@
 
 namespace Wotz\FilamentSettings\Tests\TestFiles\Settings;
 
+use Filament\Forms\Components\TextInput;
 use Wotz\FilamentSettings\Rules\SettingMustBeFilledIn;
 use Wotz\FilamentSettings\Settings\SettingsInterface;
-use Filament\Forms\Components\TextInput;
 
 class TestSettings implements SettingsInterface
 {

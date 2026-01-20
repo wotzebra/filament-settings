@@ -2,8 +2,8 @@
 
 namespace Wotz\FilamentSettings\Database\Factories;
 
-use Wotz\FilamentSettings\Models\Setting;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Wotz\FilamentSettings\Models\Setting;
 
 class SettingFactory extends Factory
 {

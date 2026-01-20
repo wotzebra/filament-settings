@@ -2,12 +2,12 @@
 
 namespace Wotz\FilamentSettings\Pages;
 
-use Wotz\FilamentSettings\Drivers\DriverInterface;
-use Wotz\FilamentSettings\Repositories\SettingTabRepository;
-use Wotz\FilamentSettings\Widgets\RequiredFieldsWidget;
 use Filament\Notifications\Notification;
 use Filament\Pages\Page;
 use Illuminate\Contracts\Support\Htmlable;
+use Wotz\FilamentSettings\Drivers\DriverInterface;
+use Wotz\FilamentSettings\Repositories\SettingTabRepository;
+use Wotz\FilamentSettings\Widgets\RequiredFieldsWidget;
 
 class Settings extends Page
 {

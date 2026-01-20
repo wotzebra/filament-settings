@@ -2,12 +2,12 @@
 
 namespace Wotz\FilamentSettings\Repositories;
 
-use Wotz\FilamentSettings\Drivers\DriverInterface;
-use Wotz\FilamentSettings\Rules\SettingMustBeFilledIn;
-use Wotz\FilamentSettings\Settings\SettingsInterface;
 use Filament\Forms\Components\Field;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
+use Wotz\FilamentSettings\Drivers\DriverInterface;
+use Wotz\FilamentSettings\Rules\SettingMustBeFilledIn;
+use Wotz\FilamentSettings\Settings\SettingsInterface;
 
 class SettingTabRepository
 {

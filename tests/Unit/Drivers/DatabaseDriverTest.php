@@ -1,8 +1,8 @@
 <?php
 
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Wotz\FilamentSettings\Drivers\DriverInterface;
 use Wotz\FilamentSettings\Models\Setting;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 
 use function Pest\Laravel\assertDatabaseCount;
 use function Pest\Laravel\assertDatabaseHas;
