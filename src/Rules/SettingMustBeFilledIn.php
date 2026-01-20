@@ -1,6 +1,6 @@
 <?php
 
-namespace Codedor\FilamentSettings\Rules;
+namespace Wotz\FilamentSettings\Rules;
 
 use Closure;
 use Illuminate\Contracts\Validation\ValidationRule;

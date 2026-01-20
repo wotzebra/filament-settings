@@ -7,7 +7,7 @@
 Installation is pretty easy. Just run the following command.
 
 ```bash
-composer require codedor/filament-settings
+composer require wotz/filament-settings
 ```
 
 ## Usage
@@ -21,7 +21,7 @@ Add the following file `Tab.php` to the `App/Settings` folder.
 
 namespace App\Settings;
 
-use Codedor\FilamentSettings\Settings\SettingsInterface;
+use Wotz\FilamentSettings\Settings\SettingsInterface;
 
 class Tab implements SettingsInterface
 {
@@ -79,7 +79,7 @@ public static function schema(): array
 #### Required fields
 
 To have a better user experience, it is highly recommended to use
-the `Codedor\FilamentSettings\Rules\SettingsMustBeFilledIn` validation rule instead of the default `required` rule.
+the `Wotz\FilamentSettings\Rules\SettingsMustBeFilledIn` validation rule instead of the default `required` rule.
 
 This way, users are still able to save the settings when 'required' settings are not yet in possession.
 All rules that have the SettingsMustBeFilledIn attached will appear in the RequiredFields widget on the dashboard and

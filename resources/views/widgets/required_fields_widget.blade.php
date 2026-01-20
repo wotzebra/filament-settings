@@ -19,7 +19,7 @@
                             style="{{ \Filament\Support\get_color_css_variables($color, shades: [400]) }}"
                         />
 
-                        <a href="{{ \Codedor\FilamentSettings\Pages\Settings::getUrl([
+                        <a href="{{ \Wotz\FilamentSettings\Pages\Settings::getUrl([
                             'tab' => $data['tab'] ?? '',
                             'focus' => $key
                         ]) }}" class="flex-1">

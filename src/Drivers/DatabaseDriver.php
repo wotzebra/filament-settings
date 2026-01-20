@@ -1,9 +1,9 @@
 <?php
 
-namespace Codedor\FilamentSettings\Drivers;
+namespace Wotz\FilamentSettings\Drivers;
 
-use Codedor\FilamentSettings\Models\Setting;
 use Illuminate\Support\Facades\Cache;
+use Wotz\FilamentSettings\Models\Setting;
 
 class DatabaseDriver implements DriverInterface
 {

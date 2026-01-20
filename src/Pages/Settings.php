@@ -1,19 +1,17 @@
 <?php
 
-namespace Codedor\FilamentSettings\Pages;
+namespace Wotz\FilamentSettings\Pages;
 
-use Codedor\FilamentSettings\Drivers\DriverInterface;
-use Codedor\FilamentSettings\Repositories\SettingTabRepository;
-use Codedor\FilamentSettings\Widgets\RequiredFieldsWidget;
-use Filament\Forms\Components\Tabs;
-use Filament\Forms\Form;
 use Filament\Notifications\Notification;
 use Filament\Pages\Page;
 use Illuminate\Contracts\Support\Htmlable;
+use Wotz\FilamentSettings\Drivers\DriverInterface;
+use Wotz\FilamentSettings\Repositories\SettingTabRepository;
+use Wotz\FilamentSettings\Widgets\RequiredFieldsWidget;
 
 class Settings extends Page
 {
-    protected static string $view = 'filament-settings::pages.settings';
+    protected string $view = 'filament-settings::pages.settings';
 
     public string $focus = '';
 
@@ -40,7 +38,7 @@ class Settings extends Page
 
     public function submit()
     {
-        /** @var \Codedor\FilamentSettings\Drivers\DriverInterface $interface */
+        /** @var \Wotz\FilamentSettings\Drivers\DriverInterface $interface */
         $interface = app(DriverInterface::class);
 
         $data = [];
@@ -62,14 +60,14 @@ class Settings extends Page
         $this->dispatch('filament-settings::refresh-widget');
     }
 
-    public function form(Form $form): Form
+    public function form(\Filament\Schemas\Schema $schema): \Filament\Schemas\Schema
     {
         /** @var SettingTabRepository $rep */
         $rep = app(SettingTabRepository::class);
 
-        return $form
-            ->schema([
-                Tabs::make('Settings')
+        return $schema
+            ->components([
+                \Filament\Schemas\Components\Tabs::make('Settings')
                     ->persistTabInQueryString()
                     ->tabs($rep->toTabsSchema($this->focus)),
             ])->statePath('data');

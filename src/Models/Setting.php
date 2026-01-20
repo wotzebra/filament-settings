@@ -1,6 +1,6 @@
 <?php
 
-namespace Codedor\FilamentSettings\Models;
+namespace Wotz\FilamentSettings\Models;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;

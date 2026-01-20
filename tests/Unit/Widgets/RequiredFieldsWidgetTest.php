@@ -1,11 +1,11 @@
 <?php
 
-use Codedor\FilamentSettings\Drivers\DriverInterface;
-use Codedor\FilamentSettings\Repositories\SettingTabRepository;
-use Codedor\FilamentSettings\Tests\TestFiles\Settings\TestSettings;
-use Codedor\FilamentSettings\Widgets\RequiredFieldsWidget;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Livewire\Livewire;
+use Wotz\FilamentSettings\Drivers\DriverInterface;
+use Wotz\FilamentSettings\Repositories\SettingTabRepository;
+use Wotz\FilamentSettings\Tests\TestFiles\Settings\TestSettings;
+use Wotz\FilamentSettings\Widgets\RequiredFieldsWidget;
 
 uses(RefreshDatabase::class);
 
@@ -32,7 +32,7 @@ it('Shows all settings that are oke', function () {
         TestSettings::class,
     ]);
 
-    /** @var \Codedor\FilamentSettings\Drivers\DriverInterface $settingsRepo */
+    /** @var \Wotz\FilamentSettings\Drivers\DriverInterface $settingsRepo */
     $settingsRepo = app(DriverInterface::class);
     $settingsRepo->set('site.name', 'filament-settings');
 

@@ -1,11 +1,11 @@
 <?php
 
-use Codedor\FilamentSettings\Drivers\DriverInterface;
-use Codedor\FilamentSettings\Pages\Settings;
-use Codedor\FilamentSettings\Repositories\SettingTabRepository;
-use Codedor\FilamentSettings\Tests\TestFiles\Settings\TestSettings;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Livewire\Livewire;
+use Wotz\FilamentSettings\Drivers\DriverInterface;
+use Wotz\FilamentSettings\Pages\Settings;
+use Wotz\FilamentSettings\Repositories\SettingTabRepository;
+use Wotz\FilamentSettings\Tests\TestFiles\Settings\TestSettings;
 
 uses(RefreshDatabase::class);
 
@@ -19,7 +19,7 @@ it('mounts with right values', function () {
         TestSettings::class,
     ]);
 
-    /** @var \Codedor\FilamentSettings\Drivers\DriverInterface $settingsRepo */
+    /** @var \Wotz\FilamentSettings\Drivers\DriverInterface $settingsRepo */
     $settingsRepo = app(DriverInterface::class);
     $settingsRepo->set('site.name', $fakeValue);
 
@@ -48,7 +48,7 @@ it('saves new setting', function () {
         TestSettings::class,
     ]);
 
-    /** @var \Codedor\FilamentSettings\Drivers\DriverInterface $settingsRepo */
+    /** @var \Wotz\FilamentSettings\Drivers\DriverInterface $settingsRepo */
     $settingsRepo = app(DriverInterface::class);
     $settingsRepo->set('site.name', $fakeOldValue);
 

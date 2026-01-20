@@ -1,35 +1,38 @@
 {
-    "name" : "codedor/filament-settings",
+    "name" : "wotz/filament-settings",
     "description" : "This is my package filament-settings",
     "keywords" : [
-        "codedor",
+        "who owns the zebra",
         "laravel",
         "filament-settings"
     ],
-    "homepage" : "https://github.com/codedor/filament-settings",
+    "homepage" : "https://github.com/wotzebra/filament-settings",
     "license" : "MIT",
     "require" : {
         "php": "^8.2",
-        "filament/filament": "^3.1",
-        "livewire/livewire": "^3.2",
-        "spatie/laravel-package-tools": "^1.12",
-        "illuminate/contracts": "^10.0|^11.0|^12.0"
+        "filament/filament": "^4.0|^5.0",
+        "illuminate/contracts": "^10.0|^11.0|^12.0",
+        "livewire/livewire": "^3.2|^4.0",
+        "spatie/laravel-package-tools": "^1.12"
     },
     "require-dev" : {
+        "larastan/larastan": "^2.0|^3.0",
         "laravel/pint": "^1.0",
         "nunomaduro/collision": "^7.0|^8.0",
-        "larastan/larastan": "^2.0|^3.0",
         "orchestra/testbench": "^8.0|^9.0|^10.0",
-        "pestphp/pest": "^2.0|^3.0",
-        "pestphp/pest-plugin-laravel": "^2.0|^3.0",
+        "pestphp/pest": "^2.0|^3.0|^4.0",
+        "pestphp/pest-plugin-laravel": "^2.0|^3.0|^4.0",
         "phpstan/extension-installer": "^1.1|^2.0",
         "phpstan/phpstan-deprecation-rules": "^1.0|^2.0",
         "phpstan/phpstan-phpunit": "^1.0|^2.0"
     },
+    "support": {
+        "email": "info@whoownsthezebra.be"
+    },
     "autoload" : {
         "psr-4" : {
-            "Codedor\\FilamentSettings\\" : "src",
-            "Codedor\\FilamentSettings\\Database\\Factories\\" : "database/factories"
+            "Wotz\\FilamentSettings\\" : "src",
+            "Wotz\\FilamentSettings\\Database\\Factories\\" : "database/factories"
         },
         "files" : [
             "src/Helpers/helpers.php"
@@ -37,13 +40,13 @@
     },
     "autoload-dev" : {
         "psr-4" : {
-            "Codedor\\FilamentSettings\\Tests\\" : "tests"
+            "Wotz\\FilamentSettings\\Tests\\" : "tests"
         }
     },
     "extra" : {
         "laravel" : {
             "providers" : [
-                "Codedor\\FilamentSettings\\Providers\\SettingsServiceProvider"
+                "Wotz\\FilamentSettings\\Providers\\SettingsServiceProvider"
             ]
         }
     },
