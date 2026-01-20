@@ -91,13 +91,26 @@ class SettingTabRepository
     {
         return $this->getTabs()
             ->flatten()
-            ->filter(fn (Field $field) => collect($field->getValidationRules())
-                ->contains(fn ($rule) => $rule instanceof SettingMustBeFilledIn))
-            ->mapWithKeys(fn (Field $field) => [
-                $field->getName() => [
-                    'label' => $field->getLabel(),
-                    'tab' => Str::of($field->getName())->before('.')->slug() . '-tab',
-                ],
-            ]);
+            ->filter(fn ($field) => $field instanceof Field)
+            ->filter(function (Field $field) {
+                try {
+                    return collect($field->getValidationRules())
+                        ->contains(fn ($rule) => $rule instanceof SettingMustBeFilledIn);
+                } catch (\Throwable) {
+                    return false;
+                }
+            })
+            ->mapWithKeys(function (Field $field) {
+                try {
+                    return [
+                        $field->getName() => [
+                            'label' => $field->getLabel(),
+                            'tab' => Str::of($field->getName())->before('.')->slug() . '-tab',
+                        ],
+                    ];
+                } catch (\Throwable) {
+                    return [];
+                }
+            });
     }
 }
