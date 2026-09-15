@@ -24,7 +24,7 @@ it('Shows all settings that needs check', function () {
         ]);
 });
 
-it('Shows all settings that are oke', function () {
+it('Hides the widget when all required settings are set', function () {
     /** @var SettingTabRepository $repo */
     $repo = app(SettingTabRepository::class);
 
@@ -37,8 +37,6 @@ it('Shows all settings that are oke', function () {
     $settingsRepo->set('site.name', 'filament-settings');
 
     Livewire::test(RequiredFieldsWidget::class)
-        ->assertSeeTextInOrder([
-            __('filament-settings::widget.required fields title'),
-            'Name - ' . __('filament-settings::widget.setting ok'),
-        ]);
+        ->assertDontSeeText(__('filament-settings::widget.required fields title'))
+        ->assertDontSeeText('Name - ' . __('filament-settings::widget.setting needs check'));
 });
