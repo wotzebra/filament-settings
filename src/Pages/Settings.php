@@ -8,6 +8,7 @@ use Filament\Pages\Page;
 use Filament\Schemas\Components\Tabs;
 use Filament\Schemas\Schema;
 use Illuminate\Contracts\Support\Htmlable;
+use Illuminate\Support\Arr;
 use UnitEnum;
 use Wotz\FilamentSettings\Drivers\DriverInterface;
 use Wotz\FilamentSettings\Repositories\SettingTabRepository;
@@ -45,15 +46,23 @@ class Settings extends Page
         /** @var DriverInterface $interface */
         $interface = app(DriverInterface::class);
 
-        $data = [];
+        $form = $this->form;
+        $state = $form->getState();
 
-        foreach ($this->form->getState() as $tab => $values) {
-            foreach ($values as $key => $value) {
-                $data["$tab.$key"] = is_array($value) ? json_encode($value) : $value;
+        // Store each field under its own name, the key it is loaded from.
+        // Splitting the state on the first segment stored "mail.from.name" as
+        // a "mail.from" blob and broke on keys without a dot.
+        foreach ($form->getFlatFields() as $field) {
+            $key = $field->getName();
+
+            if (! Arr::has($state, $key)) {
+                continue;
             }
-        }
 
-        collect($data)->each(fn ($value, $key) => $interface->set($key, $value));
+            $value = Arr::get($state, $key);
+
+            $interface->set($key, is_array($value) ? json_encode($value) : $value);
+        }
 
         Notification::make()
             ->title(self::getNavigationLabel())
