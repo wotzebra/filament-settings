@@ -11,9 +11,13 @@ class TestSettingKeys implements SettingsInterface
     public static function schema(): array
     {
         return [
+            TextInput::make('site.title'),
+
             TextInput::make('mail.from.name'),
 
             TextInput::make('mail.from.address'),
+
+            TextInput::make('shop.mail.from.name'),
 
             TextInput::make('undotted'),
 

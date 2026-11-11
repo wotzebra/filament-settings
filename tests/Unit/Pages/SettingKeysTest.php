@@ -13,7 +13,16 @@ beforeEach(function () {
     app(SettingTabRepository::class)->registerTab([TestSettingKeys::class]);
 });
 
-it('saves a key with several dots under the field name', function () {
+it('saves a key with one dot under the field name', function () {
+    Livewire::test(Settings::class)
+        ->fillForm(['site.title' => 'Brigada'])
+        ->call('submit')
+        ->assertHasNoFormErrors();
+
+    expect(setting('site.title'))->toBe('Brigada');
+});
+
+it('saves a key with two dots under the field name', function () {
     Livewire::test(Settings::class)
         ->fillForm([
             'mail.from.name' => 'Brigada',
@@ -25,6 +34,16 @@ it('saves a key with several dots under the field name', function () {
     expect(setting('mail.from.name'))->toBe('Brigada')
         ->and(setting('mail.from.address'))->toBe('hello@brigada.be')
         ->and(Setting::query()->where('key', 'mail.from')->exists())->toBeFalse();
+});
+
+it('saves a key with three dots under the field name', function () {
+    Livewire::test(Settings::class)
+        ->fillForm(['shop.mail.from.name' => 'Brigada shop'])
+        ->call('submit')
+        ->assertHasNoFormErrors();
+
+    expect(setting('shop.mail.from.name'))->toBe('Brigada shop')
+        ->and(Setting::query()->whereIn('key', ['shop.mail', 'shop.mail.from'])->exists())->toBeFalse();
 });
 
 it('saves a key without a dot under the field name', function () {
